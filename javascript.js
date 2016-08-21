@@ -1,51 +1,62 @@
-   
-var test = {
-    
-    func: function(){
-        
-        var element = document.createElement('div');
+var test = new Object()
+
+    test.addContainer = function(){
+        element = document.createElement('div');
         element.classList.add('container');
         
         var wraper = document.querySelector('body');
         wraper.appendChild(element);
-        
+    }
+    
+    test.addHeadLine = function(){
         var headLine = document.createElement('h1');
         headLine.innerHTML = 'Тест по рограммированию';
         
         var container = document.querySelector('.container');
         container.appendChild(headLine);
-        
-        var form = document.createElement('form');
+    }
+    
+    test.addForm = function(){
+        form = document.createElement('form');
         form.setAttribute('method', 'post');
         form.setAttribute('action', '#');
         element.appendChild(form);
-        
-        var ul = document.createElement('ul');
+    }
+    
+    test.addUl = function(){
+        ul = document.createElement('ul');
         ul.classList.add('test_list');
         form.appendChild(ul);
-        
-        var li = document.createElement('li');
+    }
+    
+    test.addList = function(){
+        li = document.createElement('li');
         li.innerHTML = '1.Вопрос № 1';
         ul.appendChild(li);
-        var li_1 = li.cloneNode(true);
+        li_1 = li.cloneNode(true);
         li_1.innerHTML = '2.Вопрос № 2';
         li.parentNode.insertBefore(li_1, li.nextSibling);
-        var li_2 = li_1.cloneNode(true);
+        li_2 = li_1.cloneNode(true);
         li_2.innerHTML = '3.Вопрос № 3';
         li_1.parentNode.insertBefore(li_2, li_1.nextSibling);
-        
-        var firstUl = document.createElement('ul');
+    }
+    
+    test.addSubMenu = function(){
+        firstUl = document.createElement('ul');
         firstUl.classList.add('first');
         li.appendChild(firstUl);
         
-        var secondUl = document.createElement('ul');
+        secondUl = document.createElement('ul');
         secondUl.classList.add('second');
         li_1.appendChild(secondUl);
         
-        var thirdUl = document.createElement('ul');
+        thirdUl = document.createElement('ul');
         thirdUl.classList.add('third');
         li_2.appendChild(thirdUl);
-//---  Вопрос № 1---------------------------------------------------        
+    }
+    
+    test.addLiSubMenu1 = function(){
+        //---  Вопрос № 1---------------------------------------------------        
         var liSubMenu = document.createElement('li');
         firstUl.insertBefore(liSubMenu, null);
 //------------------------------------------------------               
@@ -60,7 +71,8 @@ var test = {
         label.innerHTML = 'Вариант ответа № 1';
         liSubMenu.appendChild(label);
         label.setAttribute('for', 'radio1');
-//-----------------------------------------------------------------
+        
+        
         var liSubMenu_1 = document.createElement('li');
         firstUl.insertBefore(liSubMenu_1, null);
 //------------------------------------------------------------
@@ -90,8 +102,10 @@ var test = {
         label_2.innerHTML = 'Вариант ответа № 3';
         liSubMenu_2.appendChild(label_2);
         label_2.setAttribute('for', 'radio3');
-        
-//-----------------Вопрс № 2 -------------------------
+    }
+    
+    test.addLiSubMenu2 = function(){
+        //-----------------Вопрс № 2 -------------------------
         
         var liSubMenu_11 = document.createElement('li');
         secondUl.insertBefore(liSubMenu_11, null);
@@ -137,8 +151,10 @@ var test = {
         label3.innerHTML = 'Вариант ответа № 3';
         liSubMenu_13.appendChild(label3);
         label3.setAttribute('for', 'radio33');
-        
-//--------- Вопрос № 3 ---------------------------------------------
+    }
+    
+    test.addLiSubMenu3 = function(){
+        //--------- Вопрос № 3 ---------------------------------------------
         
         var liSubMenu_111 = document.createElement('li');
         thirdUl.insertBefore(liSubMenu_111, null);
@@ -184,8 +200,10 @@ var test = {
         label6.innerHTML = 'Вариант ответа № 3';
         liSubMenu_133.appendChild(label6);
         label6.setAttribute('for', 'radio333');
-        
-// ----- Кнопка отправить -----------------------------------------------
+    }
+    
+    test.addSubmitButton = function(){
+        // ----- Кнопка отправить -----------------------------------------------
         
         var submit = document.createElement('input');
         submit.setAttribute('type', 'submit');
@@ -194,14 +212,18 @@ var test = {
         form.appendChild(submit);
     }
     
-}
-
-
-test.func();
-
-
-
-
+    
+test.addContainer();
+test.addHeadLine();
+test.addForm();
+test.addUl();
+test.addList();
+test.addSubMenu();
+test.addLiSubMenu1();
+test.addLiSubMenu2();
+test.addLiSubMenu3();
+test.addSubmitButton();
+   
 
 
 
